@@ -1,2 +1,15 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
+
+/* Custom base styles */
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
