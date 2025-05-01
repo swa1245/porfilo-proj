@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const socialLinks = [
@@ -32,10 +33,23 @@ const Footer = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               viewport={{ once: true }}
-              className="text-gray-400"
+              className="text-gray-400 mb-4"
             >
               Building amazing web experiences
             </motion.p>
+            
+            <motion.nav
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="flex flex-wrap gap-x-6 gap-y-2"
+            >
+              <Link to="/" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</Link>
+              <Link to="/about" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">About</Link>
+              <Link to="/projects" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">Projects</Link>
+              <Link to="/contact" className="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact</Link>
+            </motion.nav>
           </div>
           
           <motion.div 
