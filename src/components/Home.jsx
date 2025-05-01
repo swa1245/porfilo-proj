@@ -122,7 +122,8 @@ const Home = () => {
               transition={{ duration: 0.5, delay: 1.8 }}
             >
               <motion.a 
-                href="#work" 
+                href='/projects' 
+
                 className="px-8 py-3 border border-[#222222] text-[#222222] hover:bg-[#222222] hover:text-[#E9E9E9] transition-all duration-300"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -131,7 +132,7 @@ const Home = () => {
               </motion.a>
               
               <motion.a 
-                href="#contact" 
+                href='/contact' 
                 className="text-[#222222] hover:text-blue-400 transition-colors duration-300 flex items-center"
                 whileHover={{ x: 5 }}
               >
