@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+  
+  const handleMobileNavClick = () => {
+    window.scrollTo(0, 0);
+    setIsOpen(false);
   };
 
   return (
@@ -92,8 +98,8 @@ const Navbar = () => {
           {[
             { name: 'Home', path: '/' },
             { name: 'Projects', path: '/projects' },
-            { name: 'About', path: '/#about' },
-            { name: 'Contact', path: '/#contact' }
+            { name: 'About', path: '/about' },
+            { name: 'Contact', path: '/contact' }
           ].map((item, index) => (
             <motion.div key={item.name}>
               <motion.div
@@ -103,7 +109,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
                 transition={{ duration: 0.3, delay: 0.1 * index }}
-                onClick={toggleMenu}
+                onClick={handleMobileNavClick}
               >
                 <Link to={item.path}>{item.name}</Link>
               </motion.div>
